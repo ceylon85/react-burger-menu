@@ -1,68 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# `사이드 바를 사용하여 햄버거 메뉴 만들기`
 
-## Available Scripts
+## `프로젝트 생성` (project name: burger-menu)
+```
+npx create-react-app burger-menu
+``` 
+## `기본 스타일 추가`
+#### styled-components 추가  
+```
+yarn add styled-components
+```
+#### 기본 스타일인 `global.js` 생성
+src/global.js 생성
 
-In the project directory, you can run:
+#### 모든 변수를 보유하는 `theme` 파일 추가
+`tutorial`에 맞춰 다크 테마로!   
+src/theme.js 생성
 
-### `yarn start`
+## `레이아웃, 메뉴 및 버거 components 추가`
+#### `App.js`에서 기본 템플릿 생성
+- burger img 출처 기록   
+  
+#### `ThemeProvider`로 `Globalstyles`을 감쌌기 때문에 theme props을 전역에서 사용 가능  
+- 매번 `props.theme`를 사용하는 대신 대괄호를 사용하여 `theme`를 사용
+   
+#### `global.js`에 있는 속성 변경   
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`Before`
+```js
+background: #0D0C1D;
+color: #EFFFFA;
+```
+`After`
+```js
+background: ${({ theme }) => theme.primaryDark};
+color: ${({ theme }) => theme.primaryLight};
+```
+## `Burger`와 `Menu` components 생성
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+#### src/components 폴더를 만들고 내부에 Burger & Menu 폴더와 index.js 파일 생성   
+- index.js 의 목적: 하나의 파일에서 컴포넌트를 가져올 수 있게 한다.
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
