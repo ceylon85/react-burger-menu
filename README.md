@@ -1,10 +1,10 @@
-# `사이드 바를 사용하여 햄버거 메뉴 만들기`
+# 사이드 바를 사용하여 햄버거 메뉴 만들기
 
-## `프로젝트 생성` (project name: burger-menu)
+## 프로젝트 생성 (project name: burger-menu)
 ```
 npx create-react-app burger-menu
 ``` 
-## `기본 스타일 추가`
+## 기본 스타일 추가
 #### styled-components 추가  
 ```
 yarn add styled-components
@@ -16,7 +16,7 @@ src/global.js 생성
 `tutorial`에 맞춰 다크 테마로!   
 src/theme.js 생성
 
-## `레이아웃, 메뉴 및 버거 components 추가`
+## 레이아웃, 메뉴 및 버거 components 추가
 #### `App.js`에서 기본 템플릿 생성
 - burger img 출처 기록   
   
@@ -25,12 +25,12 @@ src/theme.js 생성
    
 #### `global.js`에 있는 속성 변경   
 
-`Before`
+Before
 ```js
 background: #0D0C1D;
 color: #EFFFFA;
 ```
-`After`
+After
 ```js
 background: ${({ theme }) => theme.primaryDark};
 color: ${({ theme }) => theme.primaryLight};
@@ -61,7 +61,9 @@ Hook에 있는 useState를 사용
 - App.js 에 state를 만들고 기본값을 false로 한다.
 (어플리케이션이 렌더링 될 때 메뉴가 숨겨져야 하므로 false로 지정)
 
-- state를 받으려면 toggle과 sidebar 메뉴가 필요하므로 각 컴포넌트에 props로 전달한다.
+- state를 받으려면 toggle과 sidebar 메뉴가 필요하므로 각 컴포넌트에 props로 전달한다.   
+  
+App.js
 ```JS
 <Burger open={open} setOpen={setOpen} />
 <Menu open={open} setOpen={setOpen} />
@@ -69,19 +71,25 @@ Hook에 있는 useState를 사용
 
 ## `components` 에 `props` 전달   
 #### Burger.js에서 props 처리
-StyledBurger 의 props에 open 과 onClick 핸들러를 추가하여 setOpen func를 호출
+`StyledBurger` 의 props에 open 과 `onClick` 핸들러를 추가하여 setOpen func를 호출   
 
+Burger.js
+```JS
+<StyledBurger open={open} onClick={() => setOpen(!open)}>
+```
 #### Menu.js 에 open props 전달
+Menu.js
 ```JS
 <StyledMenu open={open}>
 ```
-`Menu.styled.js` 에 `transform` 속성을 추가하여 닫기 기능 활성화
+#### Menu.styled.js 에 `transform` 속성을 추가하여 닫기 기능 활성화
+Menu.styled.js
 ```JS
-  transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
+transform: ${({ open }) => (open ? "translateX(0)" : "translateX(-100%)")};
 ```
-
-### `Menu icon animation`   
-- Burger.styled.js 에 속성 추가
+# 
+### Menu icon animation   
+Burger.styled.js
 ```JS
 :first-child {
     transform: ${({ open }) => open ? 'rotate(45deg)' : 'rotate(0)'};
@@ -96,3 +104,8 @@ StyledBurger 의 props에 open 과 onClick 핸들러를 추가하여 setOpen fun
     transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   ```
+
+
+
+Link to 
+[Tutorial](https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/)
