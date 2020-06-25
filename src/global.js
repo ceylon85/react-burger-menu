@@ -1,4 +1,3 @@
-// createGlobalStyle 은 일반적으로 전체 앱에 노출되는 전역 스타일을 만든다.
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`

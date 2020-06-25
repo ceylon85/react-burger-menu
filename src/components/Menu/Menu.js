@@ -1,28 +1,29 @@
 import React from "react";
+import { bool } from "prop-types";
 import { StyledMenu } from "./Menu.styled";
 
-const Menu = () => {
+const Menu = ({ open, ...props }) => {
+  const isHidden = open ? true : false;
+  const tabIndex = isHidden ? 0 : -1;
+
   return (
-    <StyledMenu>
-      <a href="/">
-        <span role="img" aria-label="about us">
-          &#x1f481;&#x1f3fb;&#x200d;&#x2642;&#xfe0f;
-        </span>
+    <StyledMenu open={open} aria-hidden={!isHidden} {...props}>
+      <a href="/" tabIndex={tabIndex}>
+        <span aria-hidden="true">💁🏻‍♂️</span>
         About us
       </a>
-      <a href="/">
-        <span role="img" aria-label="price">
-          &#x1f4b8;
-        </span>
+      <a href="/" tabIndex={tabIndex}>
+        <span aria-hidden="true">💸</span>
         Pricing
       </a>
-      <a href="/">
-        <span role="img" aria-label="contact">
-          &#x1f4e9;
-        </span>
+      <a href="/" tabIndex={tabIndex}>
+        <span aria-hidden="true">📩</span>
         Contact
       </a>
     </StyledMenu>
   );
+};
+Menu.propTypes = {
+  open: bool.isRequired,
 };
 export default Menu;

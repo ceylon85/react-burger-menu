@@ -1,14 +1,21 @@
 import React from "react";
-import { StyledBurger } from "./Burger.styled";
+import { bool, func } from 'prop-types';
+import { StyledBurger } from './Burger.styled';
 
-const Burger = () => {
+const Burger = ({ open, setOpen }) => {
   return (
-    <StyledBurger>
+    //setOpen func 호출 Open props를 toggle 한다.
+    <StyledBurger open={open} onClick={() => setOpen(!open)}>
       <div />
       <div />
       <div />
     </StyledBurger>
   );
+};
+
+Burger.propTypes = {
+  open: bool.isRequired,
+  setOpen: func.isRequired,
 };
 
 export default Burger;
