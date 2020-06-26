@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "da76832a1af7a51bc25fcae97fa0c78d",
+    "revision": "cbc3f8cef8a4f04fa7dd98551a4da6e1",
     "url": "/react-burger-menu/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/react-burger-menu/static/js/2.09193c08.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "17155c9ae557a0b9aebb",
-    "url": "/react-burger-menu/static/js/main.cb316cbb.chunk.js"
+    "revision": "0a86105ac7db5a65adeb",
+    "url": "/react-burger-menu/static/js/main.da88eb50.chunk.js"
   },
   {
     "revision": "6f4d5ac5135c17681b1c",
