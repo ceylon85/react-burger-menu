@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/react-burger-menu/static/js/main.da88eb50.chunk.js",
-    "main.js.map": "/react-burger-menu/static/js/main.da88eb50.chunk.js.map",
+    "main.js": "/react-burger-menu/static/js/main.a5ceca76.chunk.js",
+    "main.js.map": "/react-burger-menu/static/js/main.a5ceca76.chunk.js.map",
     "runtime-main.js": "/react-burger-menu/static/js/runtime-main.7c404fb2.js",
     "runtime-main.js.map": "/react-burger-menu/static/js/runtime-main.7c404fb2.js.map",
     "static/js/2.09193c08.chunk.js": "/react-burger-menu/static/js/2.09193c08.chunk.js",
     "static/js/2.09193c08.chunk.js.map": "/react-burger-menu/static/js/2.09193c08.chunk.js.map",
     "index.html": "/react-burger-menu/index.html",
-    "precache-manifest.68bd429d9099c6f6a72d4333aaae4b33.js": "/react-burger-menu/precache-manifest.68bd429d9099c6f6a72d4333aaae4b33.js",
+    "precache-manifest.fb25c93176c568c9fa85daf7330eff56.js": "/react-burger-menu/precache-manifest.fb25c93176c568c9fa85daf7330eff56.js",
     "service-worker.js": "/react-burger-menu/service-worker.js",
     "static/js/2.09193c08.chunk.js.LICENSE.txt": "/react-burger-menu/static/js/2.09193c08.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7c404fb2.js",
     "static/js/2.09193c08.chunk.js",
-    "static/js/main.da88eb50.chunk.js"
+    "static/js/main.a5ceca76.chunk.js"
   ]
 }
