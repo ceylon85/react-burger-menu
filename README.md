@@ -105,7 +105,56 @@ Burger.styled.js
     }
   ```
 
+## Hook 추가
+- 페이지의 다른 곳을 클릭해도 메뉴를 닫게 하는 기능 추가
+#### React Hook을 추가, hook.js 생성
+- ref(react Ref)를 사용, 클릭한 요소의 확인과 누군가 페이지를 클릭할 때도 확인한다.
 
+```JS
+export const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)) {
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown', listener);
+    return () => {
+      document.removeEventListener('mousedown', listener);
+    };
+  },
+  [ref, handler],
+  );
+};
+```
+- useEffect hook을 사용하여 함수를 반환
+(componentWillUnmount 의 LifeCycle 을 대체)
 
+## Hook 연결
+App.js
+```JS
+import React, {useState, useRef} from 'react';
+import { useOnClickOutside } from './hooks';
+```
+
+- useRef()는 node 라는 이름을 사용하여 변수의 요점을 반영
+- 첫번째 인수로 node를 전달, 두번째 인수로 메뉴닫는 함수를 전달   
+
+App.js
+```JS
+const node = useRef(); 
+useOnClickOutside(node, () => setOpen(false));
+```
+
+- DOM에 ref를 전달한다. Burger와 Menu 를 가지고 있는 div에 ref를 전달
+```JS
+<div ref={node}>
+  <Burger open={open} setOpen={setOpen} />
+  <Menu open={open} setOpen={setOpen} />
+</div>
+```
+
+# 
 Link to 
 [Tutorial](https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/)
