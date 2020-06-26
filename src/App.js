@@ -6,7 +6,6 @@ import { Burger, Menu } from "./components";
 import { useOnClickOutside } from './hooks';
 
 function App() {
-  //false일 때 메뉴가 숨겨진다.
   const [open, setOpen] = useState(false);
   const node = useRef();
   useOnClickOutside(node, () => setOpen(false));
