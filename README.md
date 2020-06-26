@@ -1,4 +1,6 @@
 # 사이드 바를 사용하여 햄버거 메뉴 만들기
+`Demo` 
+https://ceylon85.github.io/react-burger-menu
 
 ## 프로젝트 생성 (project name: burger-menu)
 ```
@@ -155,6 +157,11 @@ useOnClickOutside(node, () => setOpen(false));
 </div>
 ```
 
+## Issue
+#### Minified React error #152 발생 
+- 문제: dev 버전은 앱이 나오지만, deploy하기 위해 build 된 버전은 앱이 비어서 나옴
+- 해결: facebook github에서 주석을 제거하라고 하여 JSX의 return문에 있는 주석을 제거하니 정상 작동   
+  
 # 
 Link to 
 [Tutorial](https://css-tricks.com/hamburger-menu-with-a-side-of-react-hooks-and-styled-components/)
