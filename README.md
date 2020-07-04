@@ -1,6 +1,5 @@
 # 사이드 바를 사용하여 햄버거 메뉴 만들기
-`Demo` 
-https://ceylon85.github.io/react-burger-menu
+Link to [Demo](https://ceylon85.github.io/react-burger-menu)
 
 ## 프로젝트 생성 (project name: burger-menu)
 ```
